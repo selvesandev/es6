@@ -116,3 +116,15 @@ module.exports = {
 
 Edit package.json file
 
+```javascript
+"scripts": {
+    "build": "webpack",
+    "start": "webpack-dev-server"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  
+```
