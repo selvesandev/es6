@@ -116,7 +116,7 @@ module.exports = {
 
 Edit package.json file
 
-```javascript
+```php
 "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server"
@@ -128,3 +128,27 @@ Edit package.json file
   },
   
 ```
+
+
+##Variables (Let and Const)
+
+```javascript
+let a=10; //just like javascript previous var
+const limit=10;//limit is readonly cannot be reassigned or re declared.
+
+const name=['ram','shyam','hari'];
+name.push('james');//this is valid because methods modify the data without reassigning(with = operator) is totally valid  
+
+```
+
+The concept that the let is separate from var is block scoping. Block in javascript simply groups statement, variables, object and other data into it's own scope with curly brackets. Same goes to the const as well.
+
+```javascript
+let limit=20;
+{
+    let limit =10;
+    console.log('Inside '+limit);//10 local scope
+}
+console.log('Outside '+limit);//20 global scope
+```
+Here if you replace all the let or const with var then it would have printed 10 2 times. 
