@@ -8,7 +8,9 @@ module.exports = {
         './app/variables.js',
         './app/templateliterals.js',
         './app/destructingarrayobject.js',
-        './app/operatingdestructing.js'
+        './app/modulesandmethods.js',
+        './app/operatingdestructing.js',
+        './app/arrowfunction.js',
     ],
     //out file when webpack converts our index.js file then the output will get to bundle.js file
     output: {

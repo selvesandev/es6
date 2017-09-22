@@ -1,16 +1,16 @@
 #ES6
 
-###Webpack
+### Webpack
 Webpack is a bundler for modules. Many different programming
 and framework take use of webpack. It can convert any es6 file we write into
 a js file that our browser can handle.
 
-#####Features
+##### Features
 * it bundles modules into js file - (many js file into one js file)
 * comes with a dev server. 
 
 
-#####Setup webpack
+##### Setup webpack
 
 ```terminal
     npm init -y
@@ -65,7 +65,7 @@ npm run build
 ```
 
 
-###Babel
+### Babel
 Babel is a javascript compiler.
 Adding babbel to webpack.
 
@@ -130,7 +130,7 @@ Edit package.json file
 ```
 
 
-##Variables (Let and Const)
+## Variables (Let and Const)
 
 ```javascript
 let a=10; //just like javascript previous var
@@ -222,3 +222,62 @@ let name,kids;
 
 console.log(name, kids);
 ```
+
+
+## Methods and Modules
+
+It simplified the function declaration with arrow function it also added a new helper method for arrays and objects and also new
+syntax for working with modules.
+
+#### Arrow Function
+```javascript
+
+let arrowFunction = () => {
+    console.log('Arrow Function');
+};
+setTimeout(arrowFunction, 3000);
+
+```
+
+#### Helper Methods.
+
+* ***Map***
+```javascript
+
+let values = [20, 30, 40];
+//double each value in the array
+let doubled = values.map((n) => n * 2);
+console.log(doubled);
+```
+
+* ***Filter***
+filter methods creates a new array based up off another arrays original 
+values and passing a certain test to those values.
+
+```javascript
+let points = [7, 16, 21, 40, 2, 67, 5];
+let highScore = points.filter((n) => n > 15);
+console.log(highScore);
+```
+
+* ***String Manipulation and Number Checking***
+```javascript
+
+//String
+let b=`woo${"oo".repeat(20)}`;
+console.log(b);
+
+/* ------------------ */
+console.log("butterfly".startsWith("butter"));//true
+
+/* ------------------ */
+console.log("butterfly".includes("fly"));//true
+
+```
+
+
+
+
+#### Modules
+split codes into unique files based on relevant data. Most often modules exists independently within separate file.
+This helps as our application grows.
