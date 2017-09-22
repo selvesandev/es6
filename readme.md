@@ -215,8 +215,10 @@ let king = {
     name: 'mufasa',
     kids: 1
 };
-let name, kids;
-{name, kids} = king;//rather than looking at the index or order this will match the key name
+
+let name,kids;
+({name, kids} = king);//rather than looking at the index or order this will match the key name
+
 
 console.log(name, kids);
 ```
