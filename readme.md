@@ -330,3 +330,87 @@ import multiply from "./modules/math"; //no need for the curly brackets since de
 import add from "./modules/math"; //will import multiply since it is default. you will have to {add} to import the add;
 
 ```
+
+
+## Classes & Prototypes
+Classes in javascript allows to build modules of objects based up off relevant data and behaviour.
+Creates a system of inheritance between related classes with `extends` keyword.
+Defined with class keyword and uses constructor.
+
+```javascript
+
+class Animal {
+    //to initialize the object data we use the constructor.
+    constructor(name, height) {
+        //class properties declaration in javascript
+        this.name = name;
+        this.height = height;
+    }
+
+    hello() {
+        return `Hi! I'm ${this.name}`;
+    }
+}
+
+let king = new Animal("Mufasa", 4.5);
+console.log(king);
+console.log(king.hello());
+```
+
+### Inheritance
+refers to the idea that we can create classes up of a base class 
+and receive all of those properties from the parent class.
+
+```javascript
+
+class Lion extends Animal {
+    constructor(name, height, color) {
+        super(name, height);
+        this.color = color;
+    }
+}
+
+let son = new Lion("Simba", 2, 'golden');//values will be passed to the parent constructor.
+console.log(son);
+```
+
+#### Overriding Method
+```javascript
+
+
+class Lion extends Animal {
+    constructor(name, height, color) {
+        super(name, height);
+        this.color = color;
+    }
+
+    //overriding the hello method of the Animal class.
+    hello() {
+        console.log(`Hi ${this.name} is cook kid`);
+    }
+}
+
+let son = new Lion("Simba", 2, 'golden');//values will be passed to the parent constructor.
+console.log(son);
+son.hello();
+
+```
+
+#### Classes as Modules
+
+Animal.js
+```javascript
+class Animal{
+    
+}
+export default Animal;
+```
+
+Lion.js
+```javascript
+import Animal from './Animal.js';
+class Lion extends Animal{
+    
+}
+
+```
