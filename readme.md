@@ -429,3 +429,40 @@ class Calculator{
 
 Calculator.multiply(2,3);
 ```
+
+### Prototypes
+Major programming languages like C, java , Ruby provide support for OOP.
+But the javascript is prototypal inheritance model which is bit different than classes.
+Under the hood classes are just extraction of js prototypes so we are not actually creating a classes of data like other
+OOP model but the es6 javascript syntax enables us to create prototypes very quickly 
+in a more understandable way.  
+
+
+Prototype is the characteristics that every object in js has.
+
+```javascript
+//PROTOTYPE
+function Wizard(name, house, pet) {
+    this.name = name;
+    this.house = house;
+    this.pet = pet;
+
+    this.greet = () => `I'm ${this.name}`;
+}
+
+Wizard.prototype.pet_name;
+Wizard.prototype.info = function () {
+    //you cannot use the arrow function here.
+    return `I have a ${this.pet} named ${this.pet_name}`;
+}
+
+let harry = new Wizard("Harry", "Gryffindor", "Own");
+harry.pet_name = "Hedwig";
+console.log(harry.info());
+```
+Classes simply extract this logic and wrap it up to look prototype look nice and coders like 
+oop background. But the classess are just a wrapped up prototypes and prototypes are simply function.
+
+
+
+
