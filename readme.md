@@ -414,3 +414,18 @@ class Lion extends Animal{
 }
 
 ```
+
+
+#### Static Methods
+We can access the static method of the class without declaring the instace
+of the class.
+
+```javascript
+class Calculator{
+   static multiply(a,b){
+       return a*b;
+   } 
+}
+
+Calculator.multiply(2,3);
+```

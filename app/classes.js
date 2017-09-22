@@ -1,16 +1,4 @@
-class Animal {
-    //to initialize the object data we use the constructor.
-    constructor(name, height) {
-        //class properties declaration in javascript
-        this.name = name;
-        this.height = height;
-    }
-
-    hello() {
-        return `Hi! I'm ${this.name}`;
-    }
-}
-
+import Animal from './modules/Animals';
 
 class Lion extends Animal {
     constructor(name, height, color) {
