@@ -175,9 +175,48 @@ document.getElementById('templateString').innerHTML = `<p>This is cool</p>`;
 
 ## Operating and Destructing Assignment.
 
-* Spread Operator - denoted by three period in places where statements have to handle multiple arguments. the spread operator allows to reduce this.
+* **Spread Operator** - denoted by three period in places where statements have to handle multiple arguments. the spread operator allows to reduce this.
+```javascript
 
-* Rest Parameter - function(...){} same syntax like spread operators. enables us to represent multiple arguments of a function into a single array.
+let a = [20, 30, 40];
 
-* Destructing Assignment - simplifies extracting data on arrays and object into distinct variables.
+//using spread operator;
+let b = [10, ...a, 50];//all the values of a will spread right into b
+console.log(b);
+```
 
+* **Rest Parameter** - function(...){} same syntax like spread operators. enables us to represent multiple arguments of a function into a single array.
+```javascript
+
+//will collect all the arguments passed into array a
+function collect(...a) {
+    console.log(a);
+}
+collect(1, 2, 3);
+```
+
+* **Destructing Assignment** - simplifies extracting data on arrays and object into distinct variables.
+
+
+```javascript
+//working with array
+let z = [4, 5, 6];
+let [four, five] = z;//looks at the order of the data four=4,five=5
+console.log(four, five);
+
+let animals = ['simba', 'zazu', 'ed'];
+let [lion, bird] = animals;
+console.log(lion, bird);
+```
+
+```javascript
+//working with object.
+let king = {
+    name: 'mufasa',
+    kids: 1
+};
+let name, kids;
+{name, kids} = king;//rather than looking at the index or order this will match the key name
+
+console.log(name, kids);
+```
