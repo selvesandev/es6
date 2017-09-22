@@ -1,4 +1,4 @@
-#ES6
+# ES6
 
 ### Webpack
 Webpack is a bundler for modules. Many different programming
@@ -264,7 +264,7 @@ console.log(highScore);
 ```javascript
 
 //String
-let b=`woo${"oo".repeat(20)}`;
+let b = `woo${"oo".repeat(20)}`;
 console.log(b);
 
 /* ------------------ */
@@ -280,4 +280,53 @@ console.log("butterfly".includes("fly"));//true
 
 #### Modules
 split codes into unique files based on relevant data. Most often modules exists independently within separate file.
-This helps as our application grows.
+This helps as our application grows. We dont want index.js so long that no one 
+can understant it. We use `export` key word to do so.
+
+###### Folder Structure
+```
+\index.js
+\modules\actors.js;
+```
+actors.js
+
+```javascript
+
+let actors = ["Jonny Dep", "Leonardo", "Tom Cruise", "Tom Hanks"];
+let totalActors = actors.length;
+export {actors, totalActors};
+
+```
+Index.js
+```javascript
+import {actors} from './modules/actors';
+import {totalActors} from "./modules/actors";
+
+console.log(actors, totalActors);
+```
+##### Default Keyword
+defines a fallback expression for our module when handles exporting multiple variables.
+
+* Math.js
+```javascript
+
+const add = (a, b) => {
+    return a + b;
+};
+
+const multiply = (a, b) => {
+    return a * b;
+};
+
+export {add, multiply};
+export default multiply;
+
+```
+
+* index.js
+```javascript
+import {add} from "./modules/math"; //will import the add function only;
+import multiply from "./modules/math"; //no need for the curly brackets since default is used;
+import add from "./modules/math"; //will import multiply since it is default. you will have to {add} to import the add;
+
+```
