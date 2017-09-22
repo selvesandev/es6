@@ -151,4 +151,33 @@ let limit=20;
 }
 console.log('Outside '+limit);//20 global scope
 ```
-Here if you replace all the let or const with var then it would have printed 10 2 times. 
+Here if you replace all the let or const with var then it would have printed 10 twice.
+
+
+## Template Literals
+
+Also called template strings referred to string that have embedded expression within them.
+we create them using `back tick`.
+
+```javascript
+
+let a=`good `;
+let greet=`${a} morning`;
+console.log(greet);
+
+```
+
+You can even do this.
+```javascript
+document.getElementById('templateString').innerHTML = `<p>This is cool</p>`;
+//direct html will get delivered.
+```
+
+## Operating and Destructing Assignment.
+
+* Spread Operator - denoted by three period in places where statements have to handle multiple arguments. the spread operator allows to reduce this.
+
+* Rest Parameter - function(...){} same syntax like spread operators. enables us to represent multiple arguments of a function into a single array.
+
+* Destructing Assignment - simplifies extracting data on arrays and object into distinct variables.
+

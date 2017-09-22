@@ -5,7 +5,8 @@ module.exports = {
     //entry point for our application all our js code will go here
     entry: [
             './app/index.js',
-        './app/variables.js'
+        './app/variables.js',
+        './app/templateliterals.js'
     ],
     //out file when webpack converts our index.js file then the output will get to bundle.js file
     output: {
