@@ -464,5 +464,66 @@ Classes simply extract this logic and wrap it up to look prototype look nice and
 oop background. But the classess are just a wrapped up prototypes and prototypes are simply function.
 
 
+## Data Storage
+
+* **Set**  
+All set inherit from the set prototype. so we declare set from the new keyword.
+In the set we can from primitive values to object with `add()` methods.
 
 
+```javascript
+let a = new Set();
+a.add(5);
+a.add(24);
+a.add("Ooohooo");
+a.add({a: 30, y: 20});
+a.add([2, 3, 'hey']);
+console.log(a);
+
+console.log(a.size);//the size property is used to find out the number of elements in a
+
+//check to c is the set has some value.
+if (a.has(5)) {
+    console.log('yes');
+}
+
+//access the value of the set.
+
+for (let element of a.values()) {
+    console.log(element);//like foreach of associative array in php.
+}
+``` 
+
+* **Maps**  
+Map have pairs of keys and values. each key is unique and cannot be duplicate.
+Map shares much similarity to objects but maps beats object with superior keys, and the size property.  
+  
+we can have string keys , function keys , object keys anything we like within our map in order to map a key and a value pair.
+```javascript
+let map = new Map();
+let key_1 = "string key";
+let key_2 = {a: 'key'};
+let key_3 = function () {};
+
+map.set(key_1, 'return value for a string key');
+map.set(key_2, 'return value for a object key');
+map.set(key_3, 'return value for a function key');
+
+```
+
+Iterate through our map in order to access key and value.
+
+```javascript
+let number=[[1,'one'],[2,'two']];
+let valMap=new Map(number);//{1 => "one",2 => "two"}
+
+for(let [key,value] of valMap.entries()){
+    console.log(`${key} points to ${value}`);    
+}
+
+```
+
+Example to find out the duplicate letters.
+```javascript
+
+```
