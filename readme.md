@@ -540,3 +540,47 @@ for (let i = 0; i < string.length; i++) {
 }
 console.log(letters);
 ```
+
+
+## Closures in ES6
+
+Closures refers to the function that remember their creation environment and can reference 
+independent variables within that environment.  
+In js and es6 closures enable us to create function factories. Function factories take one or
+more arguments and return new function based up of those arguments.   
+  
+Example 1
+```javascript
+const addSuffix = (x) => {
+    //here lets have a inner function called concat one arguments of it's own and return the result of adding together the
+    //suffix argument and it's own argument.
+    const concat = (y) => {
+        return x + y;
+    };
+    return concat;
+};
+
+
+let add_ness = addSuffix("ness");
+console.log(add_ness);//return a function concat(){};
+let h = add_ness("happi");
+console.log(h);//return happiness
+```
+  
+Example 2
+```javascript
+//short cuts
+const product=(x)=>{
+       return (y)=>y*x;
+}
+//OR
+const product = x => y => y*x;
+
+```
+
+
+
+## Generators
+Breaks the typical "run to completion" model for function (whenever we run a function we aspect it
+to complete first to run the program). Generators can pause and resume with `yield` and `next()`
+
