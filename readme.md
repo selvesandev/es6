@@ -654,5 +654,59 @@ console.log(it.next());//undefined
 
 ```
 
-## Asynchronous Programming.
+## Asynchronous Programming and Promises.
+Synchronous programs run in sequence without blocking from top to bottom without blockin.
+On the other hand asynchronous program run on a looped engine meaning when a blocking operation
+happens such as a network request to a server that takes a while to go through the execution diverse the operation to
+a different handler which keeps the program running without every blocking.
+    
+User interface and browsers are asynchronous by nature after all the UI have to handle the events
+such as button click, mouse move and data manipulation asynchronously.
+  
+In ES6 we can follow a model of asynchronous programming and handle function that take time to complete
+with promises. Promises allows us to handle asynchronous processes by representing values that will add some point
+return in the future. Promises exists in three state : `Pending`, `Fulfilled`, `Rejected`
 
+```javascript
+
+let p = new Promise((resolve, reject) => {
+    //resolve and reject are function to update the state of promisses.
+
+
+    //resolve("resolved promise data");
+
+
+    // reject("rejected promise data");
+
+    setTimeout(() => resolve("resolve promise data"), 3000);
+});
+
+//Consuming the promise data.
+p.then(response => {
+    console.log(response);
+    //resolved promise data
+}).catch(err => {
+    console.log(err);
+    //rejected promise data
+});
+
+console.log('after promise consumption');
+```
+
+#### HTTP & Fetch.
+In es6 we have a new API called fetch we allows us to consume internet resources through
+js programme.
+
+* **GET** - retreives data and has no secondary effect
+* **POST** - sends data to a server to add resource.
+* **HEAD, DELETE, PATCH ...**
+
+**fetch() API**
+```javascript
+
+fetch('http://jsonplaceholder.typicode.com/posts/1', {method: 'GET'})
+    .then(response => {
+        return response.json();
+    }).then(json => console.log(json));
+
+```

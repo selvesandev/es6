@@ -18,6 +18,7 @@ module.exports = {
         './app/datastorage.js',
         './app/closures.js',
         './app/generators.js',
+        './app/promisses.js',
     ],
     //out file when webpack converts our index.js file then the output will get to bundle.js file
     output: {
