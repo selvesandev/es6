@@ -584,3 +584,75 @@ const product = x => y => y*x;
 Breaks the typical "run to completion" model for function (whenever we run a function we aspect it
 to complete first to run the program). Generators can pause and resume with `yield` and `next()`
 
+
+```terminal
+babel-polyfill babel-preset-es2015 babel-preset-stage-0
+``` 
+
+```javascript
+//Defining a Generator
+function* letterMaker() {
+    //generators introduces a control flow into the function runtime.
+    yield 'a';
+    yield 'b';
+    yield 'c';
+}
+
+let letterGen = letterMaker();//we don't use new keywork when defining the instance of generators.
+
+//we use the .next() function to take one step in generator and return the current state of that generator
+console.log(letterGen.next().value);
+
+```
+
+```javascript
+
+function evens() {
+    let count = 0;
+
+    while (true) {
+        count += 2;
+        let reset = yield count;
+        if(reset){
+            count=0;
+        }
+    }
+}
+
+let sequence = evens();
+console.log(sequence.next().value);
+console.log(sequence.next().value);
+console.log(sequence.next().value);
+console.log(sequence.next().value);
+console.log(sequence.next(true).value);
+console.log(sequence.next().value);
+
+```
+
+#### Generators vs Iterators
+
+```javascript
+const arrIterator=(array)=>{
+   let index=0;
+   
+   return {
+       next:()=>{
+           if(index<array.length){
+               let next = array[index];
+               index+=1;
+               return next;
+           }
+       }
+   }
+}
+
+let it = arraIterator([1,2,3]);
+console.log(it.next());//1
+console.log(it.next());//2
+console.log(it.next());//3
+console.log(it.next());//undefined
+
+```
+
+## Asynchronous Programming.
+

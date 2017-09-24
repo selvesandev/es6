@@ -1,9 +1,11 @@
 const path = require('path');
 
+
 //we need to export a large json object.
 module.exports = {
     //entry point for our application all our js code will go here
     entry: [
+        'babel-polyfill',
         './app/index.js',
         './app/variables.js',
         './app/templateliterals.js',
